@@ -1,15 +1,14 @@
 <?php
 
-namespace app\controllers\api;
-
+namespace app\api\controllers;
 
 use app\components\presenters\ProductPresenter;
 use app\models\Product;
 use yii\rest\Controller;
 
 
-class ProductController extends Controller
-{
+class ProductController extends Controller {
+
     /**
      * @return array
      */

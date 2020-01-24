@@ -16,14 +16,6 @@ $config = [
             'cookieValidationKey' => 'WUah5bHBPPWNevpbCnwJEKZAjgb2zv-1',
             'baseUrl' => ''
         ],
-        'response' => [
-            'formatters' => [
-                'xml' => [
-                    'class' => 'yii\web\XmlResponseFormatter',
-                    'rootTag' => 'data'
-                ]
-            ],
-        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -57,9 +49,7 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [
-                'GET /api/product'  => '/api/product/index'
-            ],
+            'rules' => [],
         ],
         'formatter' => [
             'dateFormat' => 'dd.MM.yyyy',
