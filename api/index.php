@@ -11,5 +11,4 @@ require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
 
 $config = require (__DIR__ . '/../config/api-' . YII_ENV . '.php');
 
-//var_dump($config);
 (new yii\web\Application($config))->run();
