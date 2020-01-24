@@ -1,6 +1,5 @@
 <?php
 
-
 namespace app\components\searchers;
 
 use app\models\Product;

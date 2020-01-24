@@ -14,7 +14,6 @@ use Yii;
  * @property int $created_at Дата создания
  * @property int $updated_at Дата изменения
  */
-
 class Warehouse extends ActiveRecord
 {
     /**

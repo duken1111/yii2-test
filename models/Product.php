@@ -15,7 +15,8 @@ use Yii;
  * @property int $created_at Дата создания
  * @property int $updated_at Дата изменения
  *
- * @property array $prices
+ * @property Price[] $prices
+ * @property Price[] $activePrices
  */
 class Product extends ActiveRecord
 {

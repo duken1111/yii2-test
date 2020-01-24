@@ -39,7 +39,7 @@ class ProductPresenter
             $price['stock_code'] = $price['warehouse']['code'];
             $price['stock_name'] = $price['warehouse']['name'];
 
-            $price = ArrayHelper::removeKeys($price, ['id', 'warehouse_id', 'product_id', 'warehouse']);
+            $price = ArrayHelper::removeKeys($price, ['id', 'quantity', 'warehouse_id', 'product_id', 'warehouse']);
         }
     }
 }

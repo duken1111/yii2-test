@@ -22,7 +22,7 @@ class PriceController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $model = $this->findModel(Price::class, $id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('success', 'Товар обновлен');
@@ -39,7 +39,7 @@ class PriceController extends Controller
      * @throws NotFoundHttpException
      */
     public function actionGetModalForm($id) {
-        $model = $this->findModel($id);
+        $model = $this->findModel(Price::class, $id);
 
         return $this->renderAjax('modal-form', [
             'model' => $model,
@@ -56,26 +56,10 @@ class PriceController extends Controller
      */
     public function actionDelete($id)
     {
-        if ($this->findModel($id)->delete()) {
+        if ($this->findModel(Price::class, $id)->delete()) {
             Yii::$app->session->setFlash('success', 'Товар удален со склада');
         }
 
         return $this->redirect(Yii::$app->request->referrer);
-    }
-
-    /**
-     * Finds the Price model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Price the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findModel($id)
-    {
-        if (($model = Price::findOne($id)) !== null) {
-            return $model;
-        }
-
-        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

@@ -6,10 +6,13 @@ namespace app\controllers\api;
 use app\components\presenters\ProductPresenter;
 use app\models\Product;
 use yii\rest\Controller;
-use yii\web\XmlResponseFormatter;
+
 
 class ProductController extends Controller
 {
+    /**
+     * @return array
+     */
     public function actionIndex()
     {
         $products = Product::find()

@@ -3,8 +3,10 @@
 
 namespace app\components\web;
 
+use yii\db\ActiveQuery;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\web\NotFoundHttpException;
 
 class Controller extends \yii\web\Controller
 {
@@ -38,5 +40,32 @@ class Controller extends \yii\web\Controller
         ];
     }
 
+
+    /**
+     * @param $class
+     * @param $id
+     * @param null $with
+     * @return mixed
+     * @throws NotFoundHttpException
+     */
+    protected function findModel($class, $id, $with = null)
+    {
+        /**
+         * @var $query ActiveQuery
+         */
+        $query = $class::find();
+
+        if ($with) {
+            $query->with($with);
+        }
+
+        $model = $query->where(['id' => $id])->limit(1)->one();
+
+        if ($model !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
 
 }

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace app\components\helpers;
 
 
@@ -11,7 +10,7 @@ class ArrayHelper extends \yii\helpers\ArrayHelper
      * @param array $keysToDelete
      * @return array
      */
-    public static function removeKeys(array $array, array $keysToDelete) : array
+    public static function removeKeys(array $array, array $keysToDelete): array
     {
         foreach ($keysToDelete as $key) {
             if (array_key_exists($key, $array)) {
@@ -19,6 +18,6 @@ class ArrayHelper extends \yii\helpers\ArrayHelper
             }
         }
 
-       return $array;
+        return $array;
     }
 }
